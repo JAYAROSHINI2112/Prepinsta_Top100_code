@@ -1,0 +1,28 @@
+Toggle each character in a string.
+In this article we will learn a C program to toggle 
+each characters in a string i.e. to convert upper case characters 
+to lower case characters and lower case characters to upper case characters
+in a string. This will help us to understand character conversion using ASCII values.
+
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100],i,j=1,temp;
+   scanf("%s",str);
+   for(i=0;str[i]!='\0';i++)
+   {
+       
+       if(str[i] >= 'A' && str[i] <= 'Z')
+        str[i] = str[i] + 32;
+        else if(str[i] >= 'a' && str[i] <= 'z')
+        str[i] = str[i] - 32;
+   }
+   for(i=0;str[i]!='\0';i++)
+       printf("%c",str[i]);
+}
+
+Output:
+
+Please Enter any String: PREPinsta 
+Toggoled string: prepINSTA

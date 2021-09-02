@@ -1,0 +1,31 @@
+Removing brackets from an algebraic expression.
+In this article we will learn how to code a C 
+program to remove brackets from an algebraic expression.
+We will be using a while loop that will iterate each character 
+till the end of the string , and store the string in new character array .
+If brackets are found then we will skip them and as the iteration ends we will
+get an algebraic expression without brackets. 
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    char str[20];
+    scanf("%s",&str);
+    
+    for(i = 0; str[i]!= '\0'; i++)
+    {
+        while(str[i] == '[' || str[i] == '{' || str[i] == '(' || str[i] == ']' || str[i] == '}' || str[i] == ')')
+        {
+            for(j = i; str[j] != '\0'; j++)
+             str[j] = str[j+1];
+             
+           // str[j] = '\0'; 
+        }
+    }
+    printf("%s",str);
+}
+
+

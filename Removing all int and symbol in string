@@ -1,0 +1,32 @@
+In this article we will learn how to code a C program to remove all
+characters from string except alphabets. In the process to do this all the
+special characters (!,@,#,etc.) and numeric characters (1,2,3,etc.) need to 
+removed from the string. To remove the characters we will check each characters 
+of the string , if the character checked found to be a non alphabetical character
+then we will remove the character and store the 
+remaining string as it is. We will iterate this step through a for loop until every
+non alphabet character is removed.
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    char str[20];
+    scanf("%s",&str);
+    
+    for(i = 0; str[i]!= '\0'; i++)
+    {
+        while(!((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z') || str[i] == '\0'))
+        {
+            for(j = i; str[j] != '\0'; j++)
+             str[j] = str[j+1];
+             
+           // str[j] = '\0'; 
+        }
+    }
+    printf("%s",str);
+}
+Output:
+Enter a string : *1prep_insta*
+After removing non alphabetical characters the string is :prepinsta

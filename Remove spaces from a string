@@ -1,0 +1,37 @@
+Removing spaces from a string.
+In this article we will how to code
+a C program to remove spaces from a string. 
+In order to do so we will use a while loop that
+will iterate each character of the string. Then if 
+the character iterated by the while loop is not 
+a blank space then we will store this character in 
+a new string . And as the while loop ends our objective is achieved. 
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    char str[20];
+    scanf("%[^\n]s",&str);
+    
+    for(i = 0; str[i]!= '\0'; i++)
+    {
+        while(str[i] == ' ')
+        {
+            for(j = i; str[j] != '\0'; j++)
+             str[j] = str[j+1];
+             
+           // str[j] = '\0'; 
+        }
+    }
+    printf("%s",str);
+}
+
+Output:
+Enter the string
+PREP INSTA 
+The string after removing all the spaces is:     
+PREPINSTA 
